@@ -8,7 +8,7 @@ if (settings.theme === 'white') {
   console.log('Theme is white');
   settings.theme === 'white'
   document.getElementById('analystIcon').src = 'img/chart-simple-solid 1.svg';
-  document.getElementById('homeIcon').src = 'img/vector.svg';
+  document.getElementById('homeIcon').src = 'img/Vector.svg';
 } else if (settings.theme === 'dark') {
   console.log('Theme is dark');
   document.body.classList.toggle('dark-theme')
@@ -35,7 +35,7 @@ function switchTheme() {
     console.log('Switching to white theme');
     settings.theme = 'white';
     document.getElementById('analystIcon').src = 'img/chart-simple-solid 1.svg';
-    document.getElementById('homeIcon').src = 'img/vector.svg';
+    document.getElementById('homeIcon').src = 'img/Vector.svg';
     document.body.classList.remove('dark-theme');
   } else {
     alert('mistake in swithTheme()')
