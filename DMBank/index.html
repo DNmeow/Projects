@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><script type="text/javascript" src="/___vscode_livepreview_injected_script"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="shortcut icon" href="img/logo.png" type="png">
+  <title>DMBank</title>
+</head>
+<body>
+
+  <header class="header">
+    <button class="pfp">
+      <img src="img/pfp.jpg" alt="pfp" class="pfp-img">
+    </button>
+    <div class="name-block">
+      <p class="greeting">Welcome back!</p>
+      <h1 class="name">Dn Meow</h1>
+    </div>
+  </header>
+
+  <section class="card-section">
+    <div class="card">
+      <div class="balance-block">
+        <h1>Total Balance</h1>
+        <h2 class="balanceUAH">₴200.00</h2>
+      </div>
+      <div class="course-block">
+        <h1 class="balanceDollar">$20.76</h1>
+        <h1 class="balanceEuro">€18.43</h1>
+      </div>
+    </div>
+  </section>
+
+  <h1 class="trans-pretext">Transactions</h1>
+
+  <section class="transactions">
+    <div class="status"></div>
+  
+    
+
+  </section>
+
+  <section class="menu">
+    <div class="menu-block">
+      <button class="home"><img src="img/vector.svg" alt="" id="homeIcon"></button>
+      <button class="create"><img src="img/plus-solid.svg" alt=""></button>
+      <button class="analyst"><img src="img/chart-simple-solid 1.svg" alt="" id="analystIcon"></button>
+    </div>
+  </section>
+
+  <footer class="footer">
+
+  </footer>
+
+  <form class="AddBalanceBlock">
+    <button class="xmark"><img src="img/xmark-solid.svg" alt=""></button>
+    <div class="addBlock">
+    
+      <h1>Add Expenses</h1>
+
+      <input 
+      type="number" 
+      placeholder="$0" 
+      class="addInput" 
+      value="" 
+      name="amount"  
+      step="0.01" 
+      required>
+
+      <select name="selector" class="AddSelector" required>
+        <option value="">Category</option>
+        <option value="Adding">Adding</option>
+        <option value="Food">Food</option>
+        <option value="Shopping">Shopping</option>
+        <option value="Travel">Travel</option>
+      </select>
+      <input type="date" name="date" required class="addDate">
+
+      <button class="addBtn" type="submit"><span>Save</span></button>
+    </div>
+  </form>
+
+  <section class="settings">
+
+  </section>
+
+  <script src="script.js"></script>
+  <script src="settings.js"></script>
+</body>
+</html>
