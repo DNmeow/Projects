@@ -26,8 +26,8 @@
   <section id="slide2" style="display: none;">
     <div class="inSection2">
       <h1 class="h1">RefStandikBot</h1>
-      <form class="blur" id="inputForm">
-        <input type="text" placeholder="Ваш тг нік (@username)">
+      <form class="blur" id="contact-form" >
+        <input id="name" type="text" placeholder="Ваш тг нік (@username)">
         <select id="reflinks" class="reflinks">
            <option value="">Вибиріть гру</option> 
            <option value="Blum" value2="10">Blum 10₴</option> 
@@ -35,18 +35,17 @@
            <option value="Paws" value2="20">Paws 20₴</option> 
            <option value="Bums" value2="15">Memefi 15₴</option>
            <option value=" " value2="15">Інше 15₴</option>
-           <input name="reflink" placeholder="Посилання"> 
-           <input type="number" id="numberRef" placeholder="Кількість рефералів">
+        <input id="link" name="reflink" placeholder="Посилання"> 
+        <input type="number" id="numberRef" placeholder="Кількість рефералів">
    
-           <button type="submit"><span>Далі</span></button>
-           <h1 id="totalSum">Сумма: 0₴</h1>
+        <button type="submit"><span>Далі</span></button>
+        <h1 id="totalSum">Сумма: 0₴</h1>
       </form>
     </div>
   </section>
 
-  <script src="script.js">
-   
-  </script>
+  <script src="https://smtpjs.com/v3/smtp.js"></script>
+  <script src="script.js"></script>
   
 </body>
 </html>
