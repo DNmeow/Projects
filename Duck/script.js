@@ -70,25 +70,89 @@ document.getElementById('numberRef').addEventListener('input', function() {
   var referrals = this.value || 0;
 
   // Calculate the total sum
-  var totalSum = value2 * referrals;
+  const totalSum = value2 * referrals;
 
   // Update the total sum display
   document.getElementById('totalSum').textContent = 'Сума: ' + totalSum + '₴';
 });
 
+// const form = document.querySelector("blur")   
+
+// document.getElementById('inputForm').addEventListener('submit', function(event) { 
+//   event.preventDefault(); // Prevent form submission 
+//   let allFilled = true; 
+//   const inputs = document.querySelectorAll('#inputForm input'); 
+//   inputs.forEach(function(input) {
+//     if (input.value.trim() === '') { 
+//       allFilled = false; 
+//       input.classList.add('error'); // Highlight empty inputs 
+//     } else { 
+//       input.classList.remove('error');
+//      } }); 
+//      if (allFilled) { 
+//       alert('All inputs are filled!'); // You can proceed with form submission here 
+//       } else { alert('Заповніть всі форми.'); } });
 
 
-document.getElementById('inputForm').addEventListener('submit', function(event) { 
-  event.preventDefault(); // Prevent form submission 
-  let allFilled = true; 
-  const inputs = document.querySelectorAll('#inputForm input'); 
-  inputs.forEach(function(input) {
-    if (input.value.trim() === '') { 
-      allFilled = false; 
-      input.classList.add('error'); // Highlight empty inputs 
-    } else { 
-      input.classList.remove('error');
-     } }); 
-     if (allFilled) { 
-      alert('All inputs are filled!'); // You can proceed with form submission here 
-      } else { alert('Заповніть всі форми.'); } });
+
+
+const form = document.querySelector(".blur")   
+
+console.log(document.getElementById('totalSum').textContent);
+
+
+// Функция для отправки письма
+function sendEmail(event) {
+  event.preventDefault(); // предотвращаем стандартную отправку формы
+
+  // Получаем данные из формы
+  var name = document.getElementById("name").value;
+  var reflink = document.getElementById("reflinks").value;
+  var link = document.getElementById("link").value;
+  var amount = document.getElementById("numberRef").value;
+  var selectedOption = document.querySelector('#reflinks option:checked');
+  var gameAmount = totalSum.textContent
+
+  // Формируем тело письма
+  var body = `
+    Имя: ${name} <br>
+    Выбранная игра: ${reflink} <br>
+    Ссылка: ${link} <br>
+    Количество рефералов: ${amount} <br>
+    ${gameAmount}`;
+
+  // Отправка email через SMTP.js
+  Email.send({
+    Host : "smtp.elasticemail.com",
+    Username : "expady@gmail.com",
+    Password : "F48EC7C5CE3EE629D158116BA352FE786A20",
+    To: 'expady@gmail.com',  // Твой email
+    From: "expady@gmail.com",  // Почта отправителя
+    Subject: "Новое сообщение с сайта",
+    Body: body
+  }).then(
+    message => {
+      alert(message)
+      console.log(body);
+      
+      form.reset(); // Очищаем форму после отправки
+    }
+  ).catch(
+    error => alert("Ошибка при отправке: " + error)
+  );
+}
+
+// Добавляем слушатель на отправку формы
+form.addEventListener("submit", sendEmail);
+
+// Email.send({
+//   Host : "smtp.elasticemail.com",
+//   Username : "expady@gmail.com",
+//   Password : "F48EC7C5CE3EE629D158116BA352FE786A20",
+//   To : 'expady@gmail.com',
+//   From : "expady@gmail.com",
+//   Subject : "This isads the subject",
+//   Body : "And thisadssadasd is the body"
+// }).then(
+// message => alert(message)
+// );
