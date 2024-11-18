@@ -7,7 +7,7 @@
 }
 
 body{
-  background: url(../img/2.jpg) #111 no-repeat;
+  background: url(/Duck/img/2.jpg) #111 no-repeat;
   background-size: cover;
 
 }
